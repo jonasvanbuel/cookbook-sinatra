@@ -1,0 +1,15 @@
+<%
+require_relative '../cookbook'
+require_relative '../recipe'
+
+cookbook = Cookbook.new("recipes.csv")
+%>
+
+<% cookbook.recipes.each do |recipe| %>
+  <li>
+    <%= "#{recipe.name}: #{recipe.description}" %>
+  </li>
+<% end %>
+
+<br><br>
+<a href="/new">NEW</a>
